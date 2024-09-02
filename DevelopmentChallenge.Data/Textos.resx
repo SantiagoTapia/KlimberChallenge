@@ -156,4 +156,10 @@
   <data name="FGS_TrianguloEquilatero" xml:space="preserve">
     <value>Triangulo_def</value>
   </data>
+  <data name="Triangulos" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Triangulo" xml:space="preserve">
+    <value />
+  </data>
 </root>

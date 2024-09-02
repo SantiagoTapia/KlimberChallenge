@@ -60,21 +60,21 @@ namespace DevelopmentChallenge.Data.Service
                 // HEADER
                 sb.Append(_resourceManager.GetString("Titulo"));
 
-                Dictionary<FormasGeometricas, (int, decimal, decimal)> calculo = new Dictionary<FormasGeometricas, (int, decimal, decimal)>();
+                Dictionary<FormasGeometricas, (int, decimal, decimal)> totales = new Dictionary<FormasGeometricas, (int, decimal, decimal)>();
                 foreach(var forma  in formas)
                 {
 
                     if(forma is Cuadrado cuadrado)
                     {
-                        ActualizarOCrearEntrada(calculo, FormasGeometricas.Cuadrado, cuadrado.CalcularArea(), cuadrado.CalcularPerimetro());
+                        ActualizarOCrearEntrada(totales, FormasGeometricas.Cuadrado, cuadrado.CalcularArea(), cuadrado.CalcularPerimetro());
                     }
                     else if (forma is Circulo circulo)
                     {
-                        ActualizarOCrearEntrada(calculo, FormasGeometricas.Circulo, circulo.CalcularArea(), circulo.CalcularPerimetro());
+                        ActualizarOCrearEntrada(totales, FormasGeometricas.Circulo, circulo.CalcularArea(), circulo.CalcularPerimetro());
                     }
                     else if (forma is TrianguloEquilatero trianguloEq)
                     {
-                        ActualizarOCrearEntrada(calculo, FormasGeometricas.TrianguloEquilatero, trianguloEq.CalcularArea(), trianguloEq.CalcularPerimetro());
+                        ActualizarOCrearEntrada(totales, FormasGeometricas.TrianguloEquilatero, trianguloEq.CalcularArea(), trianguloEq.CalcularPerimetro());
                     }
                     else
                     {
@@ -83,38 +83,38 @@ namespace DevelopmentChallenge.Data.Service
                 }
 
 
-                foreach (var item in calculo)
+                foreach (var item in totales)
                 {
-                    sb.Append(ObtenerLinea(calculo, item.Key)); 
+                    sb.Append(ObtenerLinea(totales, item.Key)); 
                 }
 
                 // FOOTER
                 sb.Append(_resourceManager.GetString("Total"));
-                sb.Append(calculo.Values.Sum(t => t.Item1) + " " + _resourceManager.GetString("Formas") + " ");
-                sb.Append(_resourceManager.GetString("Area") + " " + (calculo.Values.Sum(t => t.Item2)).ToString("#.##") + " ");
-                sb.Append(_resourceManager.GetString("Perimetro") + " " + (calculo.Values.Sum(p => p.Item3)).ToString("#.##") + " ");
+                sb.Append(totales.Values.Sum(t => t.Item1) + " " + _resourceManager.GetString("Formas") + " ");
+                sb.Append(_resourceManager.GetString("Area") + " " + (totales.Values.Sum(t => t.Item2)).ToString("#.##") + " ");
+                sb.Append(_resourceManager.GetString("Perimetro") + " " + (totales.Values.Sum(p => p.Item3)).ToString("#.##"));
             }
 
             return sb.ToString();
         }
 
-        private void ActualizarOCrearEntrada(Dictionary<FormasGeometricas, (int, decimal, decimal)> col, FormasGeometricas tipo, decimal area, decimal perimetro)
+        private void ActualizarOCrearEntrada(Dictionary<FormasGeometricas, (int, decimal, decimal)> totales, FormasGeometricas tipo, decimal area, decimal perimetro)
         {
-            if (col.TryGetValue(tipo, out var currentValues))
+            if (totales.TryGetValue(tipo, out var currentValues))
             {
-                col[tipo] = (currentValues.Item1 + 1, currentValues.Item2 + area, currentValues.Item3 + perimetro);
+                totales[tipo] = (currentValues.Item1 + 1, currentValues.Item2 + area, currentValues.Item3 + perimetro);
             }
             else
             {
-                col.Add(tipo, (1, area, perimetro));
+                totales.Add(tipo, (1, area, perimetro));
             }
         }
 
-        private string ObtenerLinea(Dictionary<FormasGeometricas, (int, decimal, decimal)> col, FormasGeometricas tipo)
+        private string ObtenerLinea(Dictionary<FormasGeometricas, (int, decimal, decimal)> totales, FormasGeometricas tipo)
         {
-            if (col.TryGetValue(tipo, out var currentValues))
+            if (totales.TryGetValue(tipo, out var currentValues))
             {
-                return $"{col[tipo].Item1} {TraducirForma(tipo, col[tipo].Item1)} | {_resourceManager.GetString("Area")}  {col[tipo].Item2:#.##} | {_resourceManager.GetString("Perimetro")} {col[tipo].Item3:#.##} <br/>";
+                return $"{totales[tipo].Item1} {TraducirForma(tipo, totales[tipo].Item1)} | {_resourceManager.GetString("Area")} {totales[tipo].Item2:#.##} | {_resourceManager.GetString("Perimetro")} {totales[tipo].Item3:#.##} <br/>";
             }
 
             return string.Empty;

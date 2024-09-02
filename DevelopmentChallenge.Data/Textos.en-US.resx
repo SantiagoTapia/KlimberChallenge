@@ -138,13 +138,13 @@
   <data name="Area" xml:space="preserve">
     <value>Area</value>
   </data>
-  <data name="FGP_Cuadrados" xml:space="preserve">
+  <data name="FGP_Cuadrado" xml:space="preserve">
     <value>Squares</value>
   </data>
-  <data name="FGP_Triangulos" xml:space="preserve">
+  <data name="FGP_TrianguloEquilatero" xml:space="preserve">
     <value>Triangles</value>
   </data>
-  <data name="FGP_Circulos" xml:space="preserve">
+  <data name="FGP_Circulo" xml:space="preserve">
     <value>Circles</value>
   </data>
   <data name="FGS_Cuadrado" xml:space="preserve">
@@ -153,7 +153,7 @@
   <data name="FGS_Circulo" xml:space="preserve">
     <value>Circle</value>
   </data>
-  <data name="FGS_Triangulo" xml:space="preserve">
+  <data name="FGS_TrianguloEquilatero" xml:space="preserve">
     <value>Triangle</value>
   </data>
 </root>
