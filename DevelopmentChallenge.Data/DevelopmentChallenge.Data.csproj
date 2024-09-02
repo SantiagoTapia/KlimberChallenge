@@ -46,7 +46,9 @@
   <ItemGroup>
     <Compile Include="Classes\Circulo.cs" />
     <Compile Include="Classes\Cuadrado.cs" />
-    <Compile Include="Classes\FormaGeometricaService.cs" />
+    <Compile Include="Service\FormaGeometricaService.cs" />
+    <Compile Include="Modelos\FormasGeometricas.cs" />
+    <Compile Include="Modelos\Idiomas.cs" />
     <Compile Include="Classes\IFormaGeometrica.cs" />
     <Compile Include="Classes\Trapecio.cs" />
     <Compile Include="Classes\TrianguloEquilatero.cs" />

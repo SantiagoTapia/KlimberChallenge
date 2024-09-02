@@ -79,56 +79,56 @@ namespace DevelopmentChallenge.Data {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Circulo.
+        ///   Busca una cadena traducida similar a Circulos_def.
         /// </summary>
-        internal static string FG_Circulo {
+        internal static string FGP_Circulo {
             get {
-                return ResourceManager.GetString("FG_Circulo", resourceCulture);
+                return ResourceManager.GetString("FGP_Circulo", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Circulos.
+        ///   Busca una cadena traducida similar a Cuadrados_def.
         /// </summary>
-        internal static string FG_Circulos {
+        internal static string FGP_Cuadrado {
             get {
-                return ResourceManager.GetString("FG_Circulos", resourceCulture);
+                return ResourceManager.GetString("FGP_Cuadrado", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cuadrado.
+        ///   Busca una cadena traducida similar a Triangulos_def.
         /// </summary>
-        internal static string FG_Cuadrado {
+        internal static string FGP_TrianguloEquilatero {
             get {
-                return ResourceManager.GetString("FG_Cuadrado", resourceCulture);
+                return ResourceManager.GetString("FGP_TrianguloEquilatero", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cuadrados.
+        ///   Busca una cadena traducida similar a Circulo_def.
         /// </summary>
-        internal static string FG_Cuadrados {
+        internal static string FGS_Circulo {
             get {
-                return ResourceManager.GetString("FG_Cuadrados", resourceCulture);
+                return ResourceManager.GetString("FGS_Circulo", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Triangulo.
+        ///   Busca una cadena traducida similar a Cuadrado_def.
         /// </summary>
-        internal static string FG_Triangulo {
+        internal static string FGS_Cuadrado {
             get {
-                return ResourceManager.GetString("FG_Triangulo", resourceCulture);
+                return ResourceManager.GetString("FGS_Cuadrado", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Triangulos.
+        ///   Busca una cadena traducida similar a Triangulo_def.
         /// </summary>
-        internal static string FG_Triangulos {
+        internal static string FGS_TrianguloEquilatero {
             get {
-                return ResourceManager.GetString("FG_Triangulos", resourceCulture);
+                return ResourceManager.GetString("FGS_TrianguloEquilatero", resourceCulture);
             }
         }
         
