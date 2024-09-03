@@ -31,12 +31,14 @@ namespace KlimberChallengeApp
             var formas = new List<IFormaGeometrica>
             {
                 new Cuadrado(5),
-                //new Circulo(3),
-                //new TrianguloEquilatero(4),
-                //new Cuadrado(2),
-                //new TrianguloEquilatero(9),
-                //new Circulo(2.75m),
-                //new TrianguloEquilatero(4.2m)
+                new Circulo(3),
+                new TrianguloEquilatero(4),
+                new Cuadrado(2),
+                new TrianguloEquilatero(9),
+                new Circulo(2.75m),
+                new TrianguloEquilatero(4.2m),
+                new Rectangulo(2,4),
+                new Trapecio(10, 7, 1,1, 5)
             };
 
 

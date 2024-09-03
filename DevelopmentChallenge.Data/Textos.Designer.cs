@@ -97,6 +97,24 @@ namespace DevelopmentChallenge.Data {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Rectangulos_def.
+        /// </summary>
+        internal static string FGP_Rectangulo {
+            get {
+                return ResourceManager.GetString("FGP_Rectangulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Trapecio_def.
+        /// </summary>
+        internal static string FGP_Trapecio {
+            get {
+                return ResourceManager.GetString("FGP_Trapecio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Triangulos_def.
         /// </summary>
         internal static string FGP_TrianguloEquilatero {
@@ -120,6 +138,24 @@ namespace DevelopmentChallenge.Data {
         internal static string FGS_Cuadrado {
             get {
                 return ResourceManager.GetString("FGS_Cuadrado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Rectangulo_def.
+        /// </summary>
+        internal static string FGS_Rectangulo {
+            get {
+                return ResourceManager.GetString("FGS_Rectangulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Trapecio_def.
+        /// </summary>
+        internal static string FGS_Trapecio {
+            get {
+                return ResourceManager.GetString("FGS_Trapecio", resourceCulture);
             }
         }
         

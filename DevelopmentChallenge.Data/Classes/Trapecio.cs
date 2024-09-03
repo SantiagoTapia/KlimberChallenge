@@ -6,25 +6,32 @@ using System.Threading.Tasks;
 
 namespace DevelopmentChallenge.Data.Classes
 {
-    internal class Trapecio : IFormaGeometrica
+    public class Trapecio : IFormaGeometrica
     {
 
-        private readonly decimal _lado;
-        public int Tipo { get; set; }
+        private readonly decimal _baseA;
+        private readonly decimal _baseB;
+        private readonly decimal _catetoC;
+        private readonly decimal _catetoD;
+        private readonly decimal _altura;
 
-        public Trapecio(decimal ancho)
+        public Trapecio(decimal baseA, decimal baseB, decimal catetoC, decimal catetoD, decimal altura)
         {
-            _lado = ancho;
+            _baseA = baseA;
+            _baseB = baseB;
+            _catetoC = catetoC;
+            _catetoD = catetoD;
+            _altura = altura;
         }
 
         public decimal CalcularArea()
         {
-            throw new NotImplementedException();
+            return ((_baseA + _baseB) * _altura) / 2;
         }
 
         public decimal CalcularPerimetro()
         {
-            throw new NotImplementedException();
+            return _baseA + _baseB + _catetoC + _catetoD;
         }
 
         public string TraducirForma(int tipo, int cantidad, int idioma)

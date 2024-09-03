@@ -79,6 +79,14 @@ namespace DevelopmentChallenge.Data.Service
                     {
                         ActualizarOCrearEntrada(totales, FormasGeometricas.TrianguloEquilatero, trianguloEq.CalcularArea(), trianguloEq.CalcularPerimetro());
                     }
+                    else if (forma is Trapecio trapecio)
+                    {
+                        ActualizarOCrearEntrada(totales, FormasGeometricas.Trapecio, trapecio.CalcularArea(), trapecio.CalcularPerimetro());
+                    }
+                    else if (forma is Rectangulo rectangulo)
+                    {
+                        ActualizarOCrearEntrada(totales, FormasGeometricas.Rectangulo, rectangulo.CalcularArea(), rectangulo.CalcularPerimetro());
+                    }
                     else
                     {
                         Console.WriteLine("Forma desconocida");

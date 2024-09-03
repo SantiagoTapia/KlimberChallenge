@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Resources;
-using System.Threading;
+﻿using System.Collections.Generic;
 using DevelopmentChallenge.Data.Classes;
 using DevelopmentChallenge.Data.Modelos;
 using DevelopmentChallenge.Data.Service;
@@ -40,9 +36,9 @@ namespace DevelopmentChallenge.Data.Tests
             Assert.That(result == resumen);
         }
 
-        [TestCase(Idioma.Castellano, "<h1>Reporte de Formas</h1>2 Cuadrados | Area 29 | Perimetro 28 <br/>2 Circulos | Area 13,01 | Perimetro 18,06 <br/>3 Triangulos | Area 49,64 | Perimetro 51,6 <br/>TOTAL:<br/>7 Formas Area 91,65 Perimetro 97,66")]
-        [TestCase(Idioma.Ingles, "<h1>Shapes report</h1>2 Squares | Area 29 | Perimeter 28 <br/>2 Circles | Area 13,01 | Perimeter 18,06 <br/>3 Triangles | Area 49,64 | Perimeter 51,6 <br/>TOTAL:<br/>7 Shapes Area 91,65 Perimeter 97,66")]
-        [TestCase(Idioma.Italiano,"<h1>Rapporto sui moduli</h1>2 Piazze | Zona 29 | Perimetro 28 <br/>2 Cerchi | Zona 13,01 | Perimetro 18,06 <br/>3 Triangoli | Zona 49,64 | Perimetro 51,6 <br/>Totale7 Forme Zona 91,65 Perimetro 97,66")]
+        [TestCase(Idioma.Castellano, "<h1>Reporte de Formas</h1>2 Cuadrados | Area 29 | Perimetro 28 <br/>2 Circulos | Area 13,01 | Perimetro 18,06 <br/>3 Triangulos | Area 49,64 | Perimetro 51,6 <br/>1 Rectangulo | Area 8 | Perimetro 12 <br/>1 Trapezio | Area 42,5 | Perimetro 19 <br/>TOTAL:<br/>9 Formas Area 142,15 Perimetro 128,66")]
+        [TestCase(Idioma.Ingles, "<h1>Shapes report</h1>2 Squares | Area 29 | Perimeter 28 <br/>2 Circles | Area 13,01 | Perimeter 18,06 <br/>3 Triangles | Area 49,64 | Perimeter 51,6 <br/>1 Rectangle | Area 8 | Perimeter 12 <br/>1 Trapezium | Area 42,5 | Perimeter 19 <br/>TOTAL:<br/>9 Shapes Area 142,15 Perimeter 128,66")]
+        [TestCase(Idioma.Italiano, "<h1>Rapporto sui moduli</h1>2 Piazze | Zona 29 | Perimetro 28 <br/>2 Cerchi | Zona 13,01 | Perimetro 18,06 <br/>3 Triangoli | Zona 49,64 | Perimetro 51,6 <br/>1 Rettangolo | Zona 8 | Perimetro 12 <br/>1 Trapezio | Zona 42,5 | Perimetro 19 <br/>Totale9 Forme Zona 142,15 Perimetro 128,66")]
         public void TestResumenListaConMasTipos(Idioma idioma, string result)
         {
             var formas = new List<IFormaGeometrica>
@@ -53,7 +49,9 @@ namespace DevelopmentChallenge.Data.Tests
                 new Cuadrado(2),
                 new TrianguloEquilatero(9),
                 new Circulo(2.75m),
-                new TrianguloEquilatero(4.2m)
+                new TrianguloEquilatero(4.2m),
+                new Rectangulo(2,4),
+                new Trapecio(10, 7, 1,1, 5)
             };
 
             FormaGeometricaService formaService = new FormaGeometricaService(idioma);
