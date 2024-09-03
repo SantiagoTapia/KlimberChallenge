@@ -118,42 +118,42 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Encabezado" xml:space="preserve">
-    <value>Encabezado principal</value>
+    <value>Intestazione principale</value>
   </data>
   <data name="ListaVacia" xml:space="preserve">
-    <value>&lt;h1&gt;Lista vacía de formas!&lt;/h1&gt;</value>
+    <value>&lt;h1&gt;Elenco vuoto di forme&lt;/h1&gt;</value>
   </data>
   <data name="Titulo" xml:space="preserve">
-    <value>&lt;h1&gt;Reporte de Formas&lt;/h1&gt;</value>
+    <value>&lt;h1&gt;Rapporto sui moduli&lt;/h1&gt;</value>
   </data>
   <data name="Total" xml:space="preserve">
-    <value>TOTAL:&lt;br/&gt;</value>
+    <value>Totale</value>
   </data>
   <data name="Formas" xml:space="preserve">
-    <value>Formas</value>
+    <value>Forme</value>
   </data>
   <data name="Perimetro" xml:space="preserve">
     <value>Perimetro</value>
   </data>
   <data name="Area" xml:space="preserve">
-    <value>Area</value>
+    <value>Zona</value>
   </data>
   <data name="FGP_Cuadrado" xml:space="preserve">
-    <value>Cuadrados_def</value>
+    <value>Piazze</value>
   </data>
   <data name="FGP_TrianguloEquilatero" xml:space="preserve">
-    <value>Triangulos_def</value>
+    <value>Triangoli</value>
   </data>
   <data name="FGP_Circulo" xml:space="preserve">
-    <value>Circulos_def</value>
+    <value>Cerchi</value>
   </data>
   <data name="FGS_Cuadrado" xml:space="preserve">
-    <value>Cuadrado_def</value>
+    <value>Piazza</value>
   </data>
   <data name="FGS_Circulo" xml:space="preserve">
-    <value>Circulo_def</value>
+    <value>Cerchio</value>
   </data>
   <data name="FGS_TrianguloEquilatero" xml:space="preserve">
-    <value>Triangulo_def</value>
+    <value>Triangolo</value>
   </data>
 </root>

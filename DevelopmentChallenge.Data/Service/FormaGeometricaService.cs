@@ -40,6 +40,9 @@ namespace DevelopmentChallenge.Data.Service
                 case Idioma.Ingles:
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");   
                     break;
+                case Idioma.Italiano:
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("it-IT");
+                    break;
                 default:
                     Console.WriteLine("Idioma no soportado");
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-AR");   

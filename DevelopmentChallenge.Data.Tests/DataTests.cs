@@ -18,6 +18,7 @@ namespace DevelopmentChallenge.Data.Tests
         [Test]
         [TestCase(Idioma.Ingles, "<h1>Empty list of shapes!</h1>")]
         [TestCase(Idioma.Castellano, "<h1>Lista vacía de formas!</h1>")]
+        [TestCase(Idioma.Italiano, "<h1>Elenco vuoto di forme</h1>")]
         public void TestResumenListaVacia(Idioma idioma, string result)
         {
             FormaGeometricaService formaService = new FormaGeometricaService(idioma);
@@ -28,6 +29,7 @@ namespace DevelopmentChallenge.Data.Tests
         //[TestCase(Idioma.Ingles, ]
         [TestCase(Idioma.Castellano, "<h1>Reporte de Formas</h1>1 Cuadrado | Area 25 | Perimetro 20 <br/>TOTAL:<br/>1 Formas Area 25 Perimetro 20")]
         [TestCase(Idioma.Ingles, "<h1>Shapes report</h1>1 Square | Area 25 | Perimeter 20 <br/>TOTAL:<br/>1 Shapes Area 25 Perimeter 20")]
+        [TestCase(Idioma.Italiano, "<h1>Rapporto sui moduli</h1>1 Piazza | Zona 25 | Perimetro 20 <br/>Totale1 Forme Zona 25 Perimetro 20")]
         public void TestResumenListaConUnCuadrado(Idioma idioma, string result)
         {
             var cuadrados = new List<IFormaGeometrica> {new Cuadrado(5)};
@@ -40,6 +42,7 @@ namespace DevelopmentChallenge.Data.Tests
 
         [TestCase(Idioma.Castellano, "<h1>Reporte de Formas</h1>2 Cuadrados | Area 29 | Perimetro 28 <br/>2 Circulos | Area 13,01 | Perimetro 18,06 <br/>3 Triangulos | Area 49,64 | Perimetro 51,6 <br/>TOTAL:<br/>7 Formas Area 91,65 Perimetro 97,66")]
         [TestCase(Idioma.Ingles, "<h1>Shapes report</h1>2 Squares | Area 29 | Perimeter 28 <br/>2 Circles | Area 13,01 | Perimeter 18,06 <br/>3 Triangles | Area 49,64 | Perimeter 51,6 <br/>TOTAL:<br/>7 Shapes Area 91,65 Perimeter 97,66")]
+        [TestCase(Idioma.Italiano,"<h1>Rapporto sui moduli</h1>2 Piazze | Zona 29 | Perimetro 28 <br/>2 Cerchi | Zona 13,01 | Perimetro 18,06 <br/>3 Triangoli | Zona 49,64 | Perimetro 51,6 <br/>Totale7 Forme Zona 91,65 Perimetro 97,66")]
         public void TestResumenListaConMasTipos(Idioma idioma, string result)
         {
             var formas = new List<IFormaGeometrica>

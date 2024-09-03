@@ -15,12 +15,13 @@ namespace KlimberChallengeApp
             Console.WriteLine("Seleccione un idioma y presione enter");
             Console.WriteLine($"Presione {Idioma.Castellano.GetHashCode()} para: {Idioma.Castellano}");
             Console.WriteLine($"Presione {Idioma.Ingles.GetHashCode()} para: {Idioma.Ingles}");
+            Console.WriteLine($"Presione {Idioma.Italiano.GetHashCode()} para: {Idioma.Italiano}");
             Idioma idiomaElegido = Idioma.Castellano;
 
             try
             {
                 int i = int.Parse(Console.ReadLine());
-                idiomaElegido = i > 0 && i<=2 ? (Idioma)i : idiomaElegido;
+                idiomaElegido = i > 0 && i<=3 ? (Idioma)i : idiomaElegido;
             }
             catch 
             {
@@ -30,12 +31,12 @@ namespace KlimberChallengeApp
             var formas = new List<IFormaGeometrica>
             {
                 new Cuadrado(5),
-                new Circulo(3),
-                new TrianguloEquilatero(4),
-                new Cuadrado(2),
-                new TrianguloEquilatero(9),
-                new Circulo(2.75m),
-                new TrianguloEquilatero(4.2m)
+                //new Circulo(3),
+                //new TrianguloEquilatero(4),
+                //new Cuadrado(2),
+                //new TrianguloEquilatero(9),
+                //new Circulo(2.75m),
+                //new TrianguloEquilatero(4.2m)
             };
 
 

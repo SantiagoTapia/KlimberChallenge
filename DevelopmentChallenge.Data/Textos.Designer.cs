@@ -176,23 +176,5 @@ namespace DevelopmentChallenge.Data {
                 return ResourceManager.GetString("Total", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a .
-        /// </summary>
-        internal static string Triangulo {
-            get {
-                return ResourceManager.GetString("Triangulo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a .
-        /// </summary>
-        internal static string Triangulos {
-            get {
-                return ResourceManager.GetString("Triangulos", resourceCulture);
-            }
-        }
     }
 }
