@@ -11,8 +11,6 @@ namespace DevelopmentChallenge.Data.Classes
         private readonly decimal _ancho;
         private readonly decimal _largo;
 
-        public int Tipo { get; set; }
-
         public Rectangulo(decimal ancho, decimal largo)
         {
             _ancho = ancho;
@@ -26,11 +24,6 @@ namespace DevelopmentChallenge.Data.Classes
         public decimal CalcularPerimetro()
         {
             return (2 * _ancho) + (2 * _largo);
-        }
-
-        string IFormaGeometrica.TraducirForma(int tipo, int cantidad, int idioma)
-        {
-            throw new NotImplementedException();
         }
     }
 }

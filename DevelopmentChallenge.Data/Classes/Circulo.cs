@@ -9,8 +9,6 @@ namespace DevelopmentChallenge.Data.Classes
     public class Circulo : IFormaGeometrica
     {
         private readonly decimal _lado;
-        public int Tipo { get; set; }
-
         public Circulo(decimal ancho)
         {
             _lado = ancho;
@@ -23,11 +21,6 @@ namespace DevelopmentChallenge.Data.Classes
         public decimal CalcularPerimetro()
         {
             return (decimal)Math.PI * _lado;
-        }
-
-        public string TraducirForma(int tipo, int cantidad, int idioma)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -10,6 +10,5 @@ namespace DevelopmentChallenge.Data.Classes
     {
         decimal CalcularArea();
         decimal CalcularPerimetro();
-        string TraducirForma(int tipo, int cantidad, int idioma);
     }
 }

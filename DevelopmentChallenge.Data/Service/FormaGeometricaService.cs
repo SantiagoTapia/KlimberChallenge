@@ -63,36 +63,11 @@ namespace DevelopmentChallenge.Data.Service
                 // HEADER
                 sb.Append(_resourceManager.GetString("Titulo"));
 
-                Dictionary<FormasGeometricas, (int, decimal, decimal)> totales = new Dictionary<FormasGeometricas, (int, decimal, decimal)>();
+                Dictionary<string, (int, decimal, decimal)> totales = new Dictionary<string, (int, decimal, decimal)>();
                 foreach(var forma  in formas)
                 {
-
-                    if(forma is Cuadrado cuadrado)
-                    {
-                        ActualizarOCrearEntrada(totales, FormasGeometricas.Cuadrado, cuadrado.CalcularArea(), cuadrado.CalcularPerimetro());
-                    }
-                    else if (forma is Circulo circulo)
-                    {
-                        ActualizarOCrearEntrada(totales, FormasGeometricas.Circulo, circulo.CalcularArea(), circulo.CalcularPerimetro());
-                    }
-                    else if (forma is TrianguloEquilatero trianguloEq)
-                    {
-                        ActualizarOCrearEntrada(totales, FormasGeometricas.TrianguloEquilatero, trianguloEq.CalcularArea(), trianguloEq.CalcularPerimetro());
-                    }
-                    else if (forma is Trapecio trapecio)
-                    {
-                        ActualizarOCrearEntrada(totales, FormasGeometricas.Trapecio, trapecio.CalcularArea(), trapecio.CalcularPerimetro());
-                    }
-                    else if (forma is Rectangulo rectangulo)
-                    {
-                        ActualizarOCrearEntrada(totales, FormasGeometricas.Rectangulo, rectangulo.CalcularArea(), rectangulo.CalcularPerimetro());
-                    }
-                    else
-                    {
-                        Console.WriteLine("Forma desconocida");
-                    }
+                    ActualizarOCrearEntrada(totales, forma.GetType().Name, forma.CalcularArea(), forma.CalcularPerimetro());
                 }
-
 
                 foreach (var item in totales)
                 {
@@ -109,7 +84,7 @@ namespace DevelopmentChallenge.Data.Service
             return sb.ToString();
         }
 
-        private void ActualizarOCrearEntrada(Dictionary<FormasGeometricas, (int, decimal, decimal)> totales, FormasGeometricas tipo, decimal area, decimal perimetro)
+        private void ActualizarOCrearEntrada(Dictionary<string, (int, decimal, decimal)> totales, string tipo, decimal area, decimal perimetro)
         {
             if (totales.TryGetValue(tipo, out var currentValues))
             {
@@ -121,7 +96,7 @@ namespace DevelopmentChallenge.Data.Service
             }
         }
 
-        private string ObtenerLinea(Dictionary<FormasGeometricas, (int, decimal, decimal)> totales, FormasGeometricas tipo)
+        private string ObtenerLinea(Dictionary<string, (int, decimal, decimal)> totales, string tipo)
         {
             if (totales.TryGetValue(tipo, out var currentValues))
             {
@@ -130,7 +105,7 @@ namespace DevelopmentChallenge.Data.Service
 
             return string.Empty;
         }
-        private string TraducirForma(FormasGeometricas tipo, int cantidad)
+        private string TraducirForma(string tipo, int cantidad)
         {
             return cantidad == 1 ? _resourceManager.GetString($"FGS_{tipo}") : _resourceManager.GetString($"FGP_{tipo}");
         }

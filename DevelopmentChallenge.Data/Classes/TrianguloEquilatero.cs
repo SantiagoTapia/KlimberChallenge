@@ -9,7 +9,6 @@ namespace DevelopmentChallenge.Data.Classes
     public class TrianguloEquilatero : IFormaGeometrica
     {
         private readonly decimal _lado;
-        public int Tipo { get; set; }
 
         public TrianguloEquilatero(decimal ancho)
         {
@@ -24,11 +23,6 @@ namespace DevelopmentChallenge.Data.Classes
         public decimal CalcularPerimetro()
         {
             return _lado * 3;
-        }
-
-        public string TraducirForma(int tipo, int cantidad, int idioma)
-        {
-            throw new NotImplementedException();
         }
     }
 }

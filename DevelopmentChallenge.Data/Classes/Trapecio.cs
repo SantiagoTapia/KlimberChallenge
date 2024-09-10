@@ -33,10 +33,5 @@ namespace DevelopmentChallenge.Data.Classes
         {
             return _baseA + _baseB + _catetoC + _catetoD;
         }
-
-        public string TraducirForma(int tipo, int cantidad, int idioma)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
