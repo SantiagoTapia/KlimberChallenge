@@ -11,14 +11,9 @@
  * Una vez finalizado, hay que subir el código a un repo GIT y ofrecernos la URL para que podamos utilizar la nueva versión :).
  */
 
-using System;
-using System.Resources;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Reflection;
 using System.Text;
-using System.Threading;
 using DevelopmentChallenge.Data.Modelos;
 using DevelopmentChallenge.Data.Classes;
 
@@ -26,28 +21,10 @@ namespace DevelopmentChallenge.Data.Service
 {
     public class FormaGeometricaService
     {
-        ResourceManager _resourceManager;
-
+        TraductorService _traductorService;
         public FormaGeometricaService(Idioma idioma)
         {
-            _resourceManager = new ResourceManager("DevelopmentChallenge.Data.Textos", typeof(FormaGeometricaService).Assembly);
-
-            switch (idioma)
-            {
-                case Idioma.Castellano:
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-AR");  
-                    break;
-                case Idioma.Ingles:
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");   
-                    break;
-                case Idioma.Italiano:
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("it-IT");
-                    break;
-                default:
-                    Console.WriteLine("Idioma no soportado");
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-AR");   
-                    break;
-            }
+            _traductorService = new TraductorService(idioma);
         }
         public string Imprimir(List<IFormaGeometrica> formas)
         {
@@ -55,13 +32,11 @@ namespace DevelopmentChallenge.Data.Service
 
             if (!formas.Any())
             {
-                sb.Append(_resourceManager.GetString("ListaVacia"));
+                sb.Append(_traductorService.TraducirTexto("ListaVacia"));
             }
             else
             {
-                // Hay por lo menos una forma
-                // HEADER
-                sb.Append(_resourceManager.GetString("Titulo"));
+                sb.Append(_traductorService.TraducirTexto("Titulo"));
 
                 Dictionary<string, (int, decimal, decimal)> totales = new Dictionary<string, (int, decimal, decimal)>();
                 foreach(var forma  in formas)
@@ -75,10 +50,10 @@ namespace DevelopmentChallenge.Data.Service
                 }
 
                 // FOOTER
-                sb.Append(_resourceManager.GetString("Total"));
-                sb.Append(totales.Values.Sum(t => t.Item1) + " " + _resourceManager.GetString("Formas") + " ");
-                sb.Append(_resourceManager.GetString("Area") + " " + (totales.Values.Sum(t => t.Item2)).ToString("#.##") + " ");
-                sb.Append(_resourceManager.GetString("Perimetro") + " " + (totales.Values.Sum(p => p.Item3)).ToString("#.##"));
+                sb.Append(_traductorService.TraducirTexto("Total"));
+                sb.Append(totales.Values.Sum(t => t.Item1) + " " + _traductorService.TraducirTexto("Formas") + " ");
+                sb.Append(_traductorService.TraducirTexto("Area") + " " + (totales.Values.Sum(t => t.Item2)).ToString("#.##") + " ");
+                sb.Append(_traductorService.TraducirTexto("Perimetro") + " " + (totales.Values.Sum(p => p.Item3)).ToString("#.##"));
             }
 
             return sb.ToString();
@@ -100,14 +75,10 @@ namespace DevelopmentChallenge.Data.Service
         {
             if (totales.TryGetValue(tipo, out var currentValues))
             {
-                return $"{totales[tipo].Item1} {TraducirForma(tipo, totales[tipo].Item1)} | {_resourceManager.GetString("Area")} {totales[tipo].Item2:#.##} | {_resourceManager.GetString("Perimetro")} {totales[tipo].Item3:#.##} <br/>";
+                return $"{totales[tipo].Item1} {_traductorService.TraducirForma(tipo, totales[tipo].Item1)} | {_traductorService.TraducirTexto("Area")} {totales[tipo].Item2:#.##} | {_traductorService.TraducirTexto("Perimetro")} {totales[tipo].Item3:#.##} <br/>";
             }
 
             return string.Empty;
-        }
-        private string TraducirForma(string tipo, int cantidad)
-        {
-            return cantidad == 1 ? _resourceManager.GetString($"FGS_{tipo}") : _resourceManager.GetString($"FGP_{tipo}");
         }
     }
 }
